@@ -19,6 +19,9 @@ class MainActivity : AppCompatActivity() {
     private fun fetchDhcpInfo(): String {
         val wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
         val dhcpInfo = wifiManager.dhcpInfo
+        if (dhcpInfo != null){
         return dhcpInfo.toString()
+        }
+        return notifUserInfo(context, "no Wi-Fi connection")
     }
 }
