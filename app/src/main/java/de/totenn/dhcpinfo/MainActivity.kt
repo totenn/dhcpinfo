@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun fetchDhcpInfo(): String {
         val wifiManager = applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
-        val dhcpInfo = wifiManager.dhcpInfo
-        return dhcpInfo.toString()
+        val leaseDuration = wifiManager.dhcpInfo.leaseDuration
+        return leaseDuration.toString()
     }
 }
